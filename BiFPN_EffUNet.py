@@ -1,10 +1,3 @@
-# Complete EffUNet with BiFPN integration
-# - Keeps your original MBConv encoder layout
-# - Adds a 4-level BiFPN over encoder features (x2@1/4, x3@1/8, x4@1/16, x5@1/32)
-# - Decoder upsamples fused pyramid {P5->P4->P3->P2} and still uses x1 (1/2) as the final skip
-# - All pyramid levels are projected to the same channel width (fpn_channels)
-#   so BiFPN can fuse them. Adjust fpn_channels to taste.
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
